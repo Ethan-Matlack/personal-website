@@ -17,7 +17,7 @@ summary: One or two sentences, max 200 characters. Shown under the title, on car
 # role: Team Leader # your role, e.g. "Owner", "Team Leader", "Solo"
 # started: 2026-01 # YYYY-MM
 # ended: 2026-06 # YYYY-MM; leave out for "Present"
-status: active # active | planned | completed | archived  (cards show a pill unless active)
+status: active # active | planned | completed | archived  (shown as a pill on cards)
 links: # remove the "#" on the ones you have; fine to leave both commented
   # site: https://example.com
   # repo: https://github.com/Ethan-Matlack/repo-name

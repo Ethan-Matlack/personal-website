@@ -25,11 +25,10 @@ const Heading = headingLevel;
   <div class="body">
     <p class="label kind">
       {kind === 'business' ? 'Business' : 'Project'}
-      {status !== 'active' && (
-        <span class="status" data-status={status}>
-          {status}
-        </span>
-      )}
+      <span class="status" data-status={status}>
+        {status === 'active' && <span class="dot" aria-hidden="true" />}
+        {status}
+      </span>
     </p>
     <Heading class="title">
       <a href={`/projects/${project.id}/`}>{title}</a>
@@ -90,10 +89,21 @@ const Heading = headingLevel;
     align-items: center;
   }
   .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
     padding: 0.1em 0.55em;
     border: 1px solid var(--rule-strong);
     border-radius: 999px;
     color: var(--text);
+  }
+  /* Same indicator lamp as the project page's Status field, scaled to the pill. */
+  .dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--lamp);
+    box-shadow: 0 0 0 2px var(--lamp-glow);
   }
   .title {
     font-size: var(--step-1);
