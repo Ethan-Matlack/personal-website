@@ -38,30 +38,16 @@ npm run dev        # http://localhost:4321
 
 ### Adding a project
 
-Create `src/content/projects/<slug>.md`. The filename becomes the URL (`/projects/<slug>/`).
+1. Copy [`src/content/projects/_template.md`](src/content/projects/_template.md) to
+   `src/content/projects/<slug>.md`. The filename becomes the URL (`/projects/<slug>/`).
+2. Fill in the frontmatter. Every field is listed, in the order it appears on the page, with
+   notes on each. Leave unused optional fields commented out.
+3. Write the body using the suggested headings, and delete any that don't apply.
+4. The template starts as `draft: true`, so it only shows in `npm run dev`. Set
+   `draft: false` to publish.
 
-```yaml
----
-title: My Project
-kind: project # or: business
-summary: One or two sentences, max 200 characters. Used on cards and as the meta description.
-status: active # active | planned | archived (pill shown for planned/archived)
-role: Optional role
-tags: [Up to, Four shown, On cards]
-started: 2025-01-01 # optional
-ended: 2025-06-01 # optional
-links:
-  site: https://example.com
-  repo: https://github.com/…
-cover: ../../assets/my-cover.jpg # optional, processed by astro:assets
-coverAlt: Describe the image # required when cover is set
-featured: false # true = shown on the home page
-order: 10 # lower = earlier
-draft: false # true = excluded from production builds
----
-Markdown body. Suggested headings: What I did, Stack / Tools, Outcome / Status. The `summary` already
-serves as the intro, so skip an Overview section.
-```
+Files starting with `_` are never published. The schema is strict, so a misspelled field
+fails the build instead of being silently ignored.
 
 ### Portrait
 

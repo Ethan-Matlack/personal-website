@@ -3,7 +3,10 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  loader: glob({
+    pattern: '**/[^_]*.md' /* files starting with _ (e.g. _template.md) are ignored */,
+    base: './src/content/projects',
+  }),
   // Field order matches the project page, top to bottom and left to right; non-displayed fields last.
   // Strict: an unknown or misspelled field fails the build instead of being silently ignored.
   schema: ({ image }) =>
@@ -20,7 +23,8 @@ const projects = defineCollection({
           site: z.url().optional(),
           repo: z.url().optional(),
         })
-        .default({}),
+        .nullish() // an empty `links:` (all children commented out) means no links
+        .transform((v) => v ?? {}),
       tags: z.array(z.string()).default([]), // chips; first 4 shown on cards
       cover: image().optional(),
       coverAlt: z.string().optional(), // required in practice when `cover` is set
