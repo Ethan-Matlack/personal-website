@@ -4,22 +4,24 @@ import { z } from 'astro/zod';
 
 const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  // Field order matches the project page, top to bottom and left to right; non-displayed fields last.
+  // Strict: an unknown or misspelled field fails the build instead of being silently ignored.
   schema: ({ image }) =>
-    z.object({
+    z.strictObject({
+      kind: z.enum(['business', 'project']), // label above the title
       title: z.string(),
-      kind: z.enum(['business', 'project']),
-      summary: z.string().max(200), // used on cards + meta description
-      status: z.enum(['active', 'planned', 'archived']).default('active'),
+      summary: z.string().max(200), // subtitle; also cards + meta description
       role: z.string().optional(), // e.g. "Owner & Master Electrician"
-      tags: z.array(z.string()).default([]), // tech/skills, shown as chips
-      started: z.coerce.date().optional(),
-      ended: z.coerce.date().optional(),
+      started: z.coerce.date().optional(), // YYYY-MM
+      ended: z.coerce.date().optional(), // YYYY-MM; omit = Present
+      status: z.enum(['active', 'planned', 'completed', 'archived']).default('active'),
       links: z
-        .object({
+        .strictObject({
           site: z.url().optional(),
           repo: z.url().optional(),
         })
         .default({}),
+      tags: z.array(z.string()).default([]), // chips; first 4 shown on cards
       cover: image().optional(),
       coverAlt: z.string().optional(), // required in practice when `cover` is set
       featured: z.boolean().default(false), // shown on home page
