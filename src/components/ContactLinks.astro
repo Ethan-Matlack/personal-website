@@ -28,7 +28,11 @@ const links = [
   {links.map((l) => (
     <li>
       {variant === 'full' && <span class="label">{l.label}</span>}
-      <a href={l.href} rel={l.href.startsWith('http') ? 'me noopener' : undefined}>
+      <a
+        href={l.href}
+        target={l.href.startsWith('http') ? '_blank' : undefined}
+        rel={l.href.startsWith('http') ? 'me noopener' : undefined}
+      >
         {variant === 'compact' && (
           <svg
             class="icon"
@@ -43,6 +47,7 @@ const links = [
           />
         )}
         <span>{variant === 'full' ? l.text : l.label}</span>
+        {l.href.startsWith('http') && <span class="visually-hidden"> (opens in a new tab)</span>}
       </a>
     </li>
   ))}

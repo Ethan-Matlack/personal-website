@@ -25,15 +25,17 @@ const display = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </li>
           <li>
-            <a href={site.socials.linkedin} rel="me noopener">
+            <a href={site.socials.linkedin} target="_blank" rel="me noopener">
               <span class="screen-only">LinkedIn</span>
               <span class="print-only">{display(site.socials.linkedin)}</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
             </a>
           </li>
           <li>
-            <a href={site.socials.github} rel="me noopener">
+            <a href={site.socials.github} target="_blank" rel="me noopener">
               <span class="screen-only">GitHub</span>
               <span class="print-only">{display(site.socials.github)}</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
             </a>
           </li>
           <li class="print-only">{display(site.url)}</li>

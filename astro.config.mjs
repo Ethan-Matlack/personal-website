@@ -2,6 +2,8 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { site } from './src/data/site.ts';
+import { satteri } from '@astrojs/markdown-satteri';
+import externalLinks from './src/lib/external-links.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +13,12 @@ export default defineConfig({
     format: 'directory',
   },
   integrations: [sitemap()],
+  markdown: {
+    // External links in Markdown open in a new tab (see src/lib/external-links.mjs).
+    processor: satteri({
+      hastPlugins: [externalLinks({ siteHost: new URL(site.url).hostname })],
+    }),
+  },
   // Self-hosted variable fonts from the installed Fontsource packages.
   // Astro generates size-adjusted fallbacks so font swap causes no layout shift.
   fonts: [
