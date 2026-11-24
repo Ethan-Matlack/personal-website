@@ -9,10 +9,11 @@ status: completed
 links:
   # site:
   repo: https://github.com/Ethan-Matlack/WU-AutomaticChessboard
+  # paper:
 tags: [Arduino, C++, Stepper Motors, CoreXY, CAD, 3D Printing]
 # cover:
 # coverAlt:
-featured: true
+featured: false
 order: 3
 draft: false
 ---
@@ -31,11 +32,7 @@ Build a chessboard you can play against a computer using real pieces. The board 
 
 ## My role
 
-TODO (Ethan): what you personally owned, e.g. the CoreXY mechanics and printed parts, the wiring and electronics, or the motor-control rewrite.
-
-## Testing and debugging
-
-We tested in stages: the motors first, then the motors together with the code. The first problem was a few miswired driver pins. The harder one came after that. Running the original project's code with only our pin numbers changed, triggering the Y-axis limit switch also triggered the X-axis one, and the motors made unintended moves during startup. We traced the limit-switch circuits with a meter and then rewrote the motor control around the AccelStepper library. That fixed the startup behavior, made the motion more predictable, and cut the motor code down considerably.
+As team leader, I handled the mechanical design: the CoreXY gantry, the frame, and all of the 3D-printed mounts and carriages. I also did most of the low-level electronics, wiring the stepper drivers, electromagnet driver, limit switches, and sensor multiplexer to the Arduino. On a three-person team, one teammate led the software and the other handled documentation and some of the CAD. I also contributed heavily to the code.
 
 ## Outcome
 
@@ -51,4 +48,4 @@ If we built it again, we'd:
 
 ## Stack / Tools
 
-Arduino Nano, C++ (Arduino IDE), AccelStepper, NEMA 17 steppers and A4988 drivers, CoreXY mechanics, V-slot extrusion, Autodesk Inventor, and 3D printing.
+Arduino Nano, C++, NEMA 17 steppers and A4988 drivers, Autodesk Inventor, and 3D printing.

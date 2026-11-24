@@ -12,8 +12,7 @@ import { getProjects } from '../lib/projects';
 
 const featured = (await getProjects()).filter((p) => p.data.featured);
 
-// Optional portrait: drop src/assets/portrait.jpg (or .png/.webp) in and it appears.
-// TODO (Ethan): add a portrait, or leave the hero purely typographic.
+// TODO: add a portrait?? (drop into src/assets/)
 const portraitModules = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/portrait.{jpg,jpeg,png,webp}',
   { eager: true },

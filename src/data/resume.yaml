@@ -116,16 +116,61 @@ certifications:
     issued: 2023-04
 
 skills:
+  # Items marked "# new" are suggestions; delete any that don't fit.
   - group: Controls & Automation
-    items: ['TODO (Ethan): PLC platforms, HMI, etc.']
+    items:
+      - Motion control
+      - Machine vision
+      - Embedded programming
+      - PLC programming
+      - Ladder logic
+      - Stepper & servo motors
+      - PID tuning
+      - Sensors & instrumentation
+      - Motor control circuits
+      - Electrical schematics
+      - Equipment troubleshooting
   - group: Electrical
     items:
-      - Residential & light commercial
       - Service upgrades
       - Generators
       - EV charging
       - Lighting control
+      - Automatic transfer switches
+      - Transformers
+      - Lutron programming
+      - Low-voltage wiring
+      - NEC code compliance
+      - Fault diagnosis
+      - Permits & inspections
   - group: Software & Tools
-    items: [MATLAB, Linux, Networking, Docker, Home Assistant, Git]
+    items:
+      - Python
+      - C/C++
+      - Git/GitHub
+      - MATLAB
+      - Autodesk Fusion 360
+      - Autodesk Inventor
+      - Arduino
+      - Raspberry Pi
+      - OpenCV
+      - ArduPilot & MAVLink
+      - ROS & Gazebo
+      - Linux
+      - Docker
+      - Networking
+      - Web development
   - group: Fabrication
-    items: [Arc welding]
+    items:
+      - 3D printing
+      - Laser cutting
+      - Stick welding
+      - Soldering
+      - Rapid prototyping
+      - Mechanical assembly
+  - group: Business
+    items:
+      - Project management
+      - Estimating & bidding
+      - Scheduling
+      - Customer communication

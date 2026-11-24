@@ -9,7 +9,8 @@ status: active
 links:
   # site:
   repo: https://github.com/Ethan-Matlack/media-audit
-tags: [Python, Docker, Unraid, SQLite]
+  # paper:
+tags: [Python, Docker, Unraid, SQLite, GitHub Actions]
 # cover:
 # coverAlt:
 featured: false
@@ -19,17 +20,24 @@ draft: false
 
 ## What it does
 
-media-audit grew out of my [homelab](/projects/homelab/). It answers the questions a media server doesn't: where the space is going, what's actually inside each file, and what's broken or out of place. It's strictly read-only and never modifies, moves, or renames media.
+media-audit grew out of my [homelab](/projects/homelab/). Hard drive prices skyrocketed and suddenly I was scrutinizing storage capacity in a way that I hadn't needed to before. All of the existing tools at my disposal didn't really answer my questions, so I built my own. This tool is designed to provide both high-level and extremely granular details about your media library. 
 
-- **Storage breakdowns.** Space per library, title, and season, tracked over time, and split by resolution, HDR and Dolby Vision, codec, audio format, and language.
-- **Every file's details.** The video, audio, and subtitle tracks of every file, with filters, grouping, charts, and CSV export.
-- **Issue checks.** Around twenty checks for unreadable files, duplicates, truncated episodes, mislabeled resolutions, gaps in episode numbering, stray files, and empty folders, each showing the space you'd get back.
-- **Safe cleanup.** For leftovers that need no judgment, it writes a cleanup script you review and run yourself. The script is a dry run by default, and files go to a quarantine folder instead of being deleted.
-- **Incremental scans.** It rescans on a schedule but only reads new or changed files, so after the first full scan, a rescan of a large library takes about a minute.
+- **Where the space goes.** Storage per library, title, and season, broken down by resolution, HDR, codec, and audio, and tracked over time.
+- **What's wrong.** About twenty checks for problems like duplicates, truncated episodes, and stray files, each showing the space you'd get back.
+- **Safe by design.** It never touches your media. Cleanup is a script you review and run yourself.
+- **Low maintenance.** It rescans on a schedule and only reads files that changed.
+
+See the [GitHub repo](https://github.com/Ethan-Matlack/media-audit) for the full feature list.
+
+## How it's built
+
+- **Backend:** a Python app on Starlette, with server-rendered templates and no front-end build step or CDN. SQLite with versioned migrations stores the data. Analysis rules are pure functions over stored MediaInfo output, so changing a rule re-derives results without reading any media again.
+- **Testing:** the rules are tested against MediaInfo captures from a real library, covering Dolby Vision, HDR10+, Atmos, DTS:X, remuxes, and anime. CI runs the full test suite with linting and type checking on every push.
+- **Releases:** every merge publishes a Docker image automatically. The app runs from an Unraid template, as a standalone Docker container, or as plain Python.
 
 ## Stack / Tools
 
-Python, MediaInfo for reading file headers, SQLite for storage, and a built-in web UI with a matching command line. It runs as an Unraid template, a Docker container, or plain Python.
+Python, Starlette, Jinja, pydantic, SQLite, MediaInfo, uv, pytest, Ruff, mypy, Docker, GitHub Actions, and GitHub Container Registry.
 
 ## Status
 
