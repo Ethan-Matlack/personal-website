@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "ethanmatlack-com",
+  "name": "personal-website",
   "compatibility_date": "2026-11-23",
   // Static assets only: no `main`, no Worker script.
   "assets": {
