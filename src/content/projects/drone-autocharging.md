@@ -11,8 +11,8 @@ links:
   repo: https://github.com/Ethan-Matlack/WU-Team20-AutonomousDrone
   paper: https://digitalwolfgram.widener.edu/digital/collection/p16069coll18/id/4106/rec/4
 tags: [Python, OpenCV, ArduPilot, Raspberry Pi, MAVLink, CAD, Gazebo, ROS]
-# cover:
-# coverAlt:
+cover: ../../assets/projects/drone-autocharging-cover.jpg
+coverAlt: The team sitting behind an in-progress version of the drone
 featured: true
 order: 2
 draft: false
