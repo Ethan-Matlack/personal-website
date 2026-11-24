@@ -22,6 +22,7 @@ const projects = defineCollection({
         .strictObject({
           site: z.url().optional(),
           repo: z.url().optional(),
+          paper: z.url().optional(), // e.g. a report hosted by a university library
         })
         .nullish() // an empty `links:` (all children commented out) means no links
         .transform((v) => v ?? {}),

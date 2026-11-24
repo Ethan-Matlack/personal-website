@@ -55,7 +55,7 @@ const hostname = (u: string) => new URL(u).hostname.replace(/^www\./, '');
             <span>{status[0].toUpperCase() + status.slice(1)}</span>
           </dd>
         </div>
-        {(links.site || links.repo) && (
+        {(links.site || links.repo || links.paper) && (
           <div>
             <dt class="label">Links</dt>
             <dd class="links">
@@ -68,6 +68,12 @@ const hostname = (u: string) => new URL(u).hostname.replace(/^www\./, '');
               {links.repo && (
                 <a href={links.repo} target="_blank" rel="noopener">
                   Source <span aria-hidden="true">↗</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              )}
+              {links.paper && (
+                <a href={links.paper} target="_blank" rel="noopener">
+                  Paper <span aria-hidden="true">↗</span>
                   <span class="visually-hidden">(opens in a new tab)</span>
                 </a>
               )}
