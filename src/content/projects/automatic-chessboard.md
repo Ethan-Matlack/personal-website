@@ -11,8 +11,8 @@ links:
   repo: https://github.com/Ethan-Matlack/WU-AutomaticChessboard
   # paper:
 tags: [Arduino, C++, Stepper Motors, CoreXY, CAD, 3D Printing]
-# cover:
-# coverCaption:
+cover: ../../assets/projects/automatic-chessboard-cover.jpg
+coverCaption: Wiring the reed switching into multiplexers
 featured: false
 order: 3
 draft: false
