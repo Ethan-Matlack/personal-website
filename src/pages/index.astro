@@ -32,7 +32,7 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  description={`${site.name}: ${site.headline.toLowerCase()} in ${site.location}. ${site.subhead}`}
+  description={`Hi, I'm Ethan. I work where engineering meets the trades: industrial controls, electrical systems, and the software in between. Based in ${site.location}.`}
   jsonLd={jsonLd}
 >
   <div class="wrap">
@@ -44,7 +44,6 @@ const jsonLd = {
         </p>
         <h1 id="hero-name">{site.name}</h1>
         <p class="headline">{site.headline}</p>
-        <p class="subhead">{site.subhead}</p>
         <p class="actions">
           <a class="text-button" data-primary href="/resume/">
             View resume{' '}
@@ -166,13 +165,6 @@ const jsonLd = {
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1.2;
-  }
-  .subhead {
-    margin-top: var(--space-2xs);
-    max-width: 44ch;
-    font-size: var(--step-1);
-    line-height: 1.45;
-    color: var(--muted);
   }
   .actions {
     display: flex;

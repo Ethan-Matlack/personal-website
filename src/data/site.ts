@@ -7,7 +7,6 @@
 export const site = {
   name: 'Ethan Matlack',
   headline: 'Robotics engineer & master electrician',
-  subhead: 'Industrial controls, electrical systems, and the software that ties them together.',
   location: 'Chattanooga, TN',
   email: 'ethan@matlackfamily.net',
   socials: {
