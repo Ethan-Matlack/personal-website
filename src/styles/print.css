@@ -114,3 +114,22 @@ a {
 .resume h1 {
   letter-spacing: -0.02em;
 }
+.resume .cred-row {
+  padding-block: 2.5pt !important;
+  border-color: #e2e2e2 !important;
+}
+.resume .cred-row .issuer {
+  font-size: 8.5pt !important;
+}
+.resume .cert-group + .cert-group {
+  margin-top: 8pt !important;
+}
+.resume .group-head {
+  font-size: 9.5pt !important;
+  padding-bottom: 2pt !important;
+  border-bottom: 1.25pt solid #000 !important;
+}
+.resume .content > .cred-list:first-child > .cred-row:first-child {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}

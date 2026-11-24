@@ -1,0 +1,37 @@
+---
+/** Certifications grouped under category headers. Shared by /resume/ and the home page. */
+import { certificationGroups } from '../lib/resume';
+import CredentialList from './CredentialList.astro';
+
+interface Props {
+  headingLevel?: 'h3' | 'h4';
+}
+const { headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
+---
+
+<div class="cert-groups">
+  {certificationGroups().map(({ group, items }) => (
+    <div class="cert-group">
+      <Heading class="group-head">{group}</Heading>
+      <CredentialList items={items} label={group} />
+    </div>
+  ))}
+</div>
+
+<style>
+  .cert-group + .cert-group {
+    margin-top: var(--space-l);
+  }
+  .group-head {
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--text);
+    font-size: var(--step-0);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  /* The heavy header rule replaces the first row's hairline. */
+  .cert-group :global(.cred-row:first-child) {
+    border-top: 0;
+  }
+</style>

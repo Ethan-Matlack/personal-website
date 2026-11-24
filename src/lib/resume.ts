@@ -36,17 +36,29 @@ const resumeSchema = z.strictObject({
       school: z.string(),
       degree: z.string(),
       focus: z.string().optional(),
-      year: z.union([z.number().int(), z.string()]).optional(),
+      start: monthValue,
+      end: monthValue.nullable(), // null = Present (in progress)
     }),
   ),
   licenses: z.array(
     z.strictObject({
       name: z.string(),
       issuer: z.string(),
-      year: z.number().int().optional(),
+      issued: monthValue.optional(),
+      featured: z.boolean().default(false), // shown in the home-page Credentials section
+      expires: monthValue.optional(), // shown as "Expires …" or "Expired …" relative to build date
     }),
   ),
-  certifications: z.array(z.string()),
+  certifications: z.array(
+    z.strictObject({
+      name: z.string(),
+      group: z.string().default('Other'), // category subhead; groups appear in first-seen order
+      issuer: z.string().optional(),
+      issued: monthValue.optional(),
+      featured: z.boolean().default(false), // shown in the home-page Credentials section
+      expires: monthValue.optional(),
+    }),
+  ),
   skills: z.array(
     z.strictObject({
       group: z.string(),
@@ -79,4 +91,23 @@ export function formatMonth(value: string): string {
 /** Valid `datetime` attribute, or undefined for placeholders. */
 export function datetimeAttr(value: string): string | undefined {
   return /^\d{4}(-\d{2})?$/.test(value) ? value : undefined;
+}
+
+/**
+ * True once the given month (or year) has fully passed, relative to build time.
+ * "2025-03" expires at the start of Apr 2025; "2025" at the start of 2026.
+ */
+export function hasPassed(value: string, now: Date = new Date()): boolean {
+  const m = /^(\d{4})(?:-(\d{2}))?$/.exec(value);
+  if (!m) return false;
+  const year = Number(m[1]);
+  const boundary = m[2] ? Date.UTC(year, Number(m[2]), 1) : Date.UTC(year + 1, 0, 1);
+  return now.getTime() >= boundary;
+}
+
+/** Certifications bucketed by `group`, in the order each group first appears in the YAML. */
+export function certificationGroups(certs: Resume['certifications'] = resume.certifications) {
+  const groups = new Map<string, Resume['certifications']>();
+  for (const c of certs) groups.set(c.group, [...(groups.get(c.group) ?? []), c]);
+  return [...groups].map(([group, items]) => ({ group, items }));
 }

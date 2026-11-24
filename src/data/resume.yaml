@@ -13,7 +13,7 @@ basics:
     controls technician work in the Chattanooga area.
 
 highlights:
-  - B.S. Robotics Engineering (industrial controls)
+  - B.S. Robotics Engineering from Widener University
   - PA Master Electrician; TN Limited Licensed Electrician
   - 6+ years running a licensed electrical contracting business
 
@@ -21,46 +21,98 @@ experience:
   - org: Matlack Electric
     role: Owner & Master Electrician
     location: PA → TN
-    start: 2020-01 # TODO (Ethan): exact month
+    start: 2020-03
     end: null # null = Present
     bullets:
-      - 'TODO (Ethan): Founded and run a licensed, insured electrical contracting business: estimating, permitting, scheduling, and field work.'
-      - 'TODO (Ethan): Install and program Lutron RadioRA lighting control, EV chargers (Tesla certified), and Generac standby generators.'
-      - 'TODO (Ethan): Relocated the business from Pennsylvania to Tennessee and re-licensed in the new state.'
-  - org: 'TODO (Ethan): printing facility'
-    role: Maintenance
-    start: TODO
-    end: TODO
-    bullets:
-      - 'TODO (Ethan): Maintained and troubleshot industrial printing and finishing equipment on a production floor.'
-      - 'TODO (Ethan): Diagnosed electrical, mechanical, and control faults to keep lines running.'
+      - 'Built and run a licensed, insured electrical contracting business; 500+ invoiced jobs across service calls, small installs, and large remodel and addition projects.'
+      - 'Performed diagnostics and maintenance on production equipment at a commercial printing facility, replacing a DC speed controller on a shrink-wrap machine, a 480V transformer on an automated paper cutter, and a pneumatic pump.'
+      - 'Diagnose and repair electrical faults on residential and commercial service calls, often on systems with no documentation.'
+      - 'Install and start up standby generators and automatic transfer switches (Generac certified) and EV charging equipment (Tesla certified).'
+      - 'Design and program lighting control systems for custom homes (Lutron Preferred Pro with RadioRA certification).'
+      - 'Manage projects end to end: estimating, material ordering, scheduling, code compliance, inspections, and customer communication.'
   - org: Self-employed
-    role: Handyman / general repair
+    role: Handyman
+    location: PA
     start: 2018-01
-    end: 2020-01
+    end: 2020-02
     bullets:
-      - 'TODO (Ethan): Residential repair and light renovation work for private clients.'
-      - 'TODO (Ethan): Built the customer base that became Matlack Electric.'
+      - 'Performed residential repair and light renovation work for private clients. Everything from electrical and plumbing to carpentry and painting.'
 
 education:
   - school: Widener University
     degree: B.S. Robotics Engineering
     focus: Industrial controls
-    year: TODO (Ethan)
+    start: 2018-08
+    end: 2023-08
 
 licenses:
   - name: Master Electrician
-    issuer: Multiple Pennsylvania municipalities
-    year: 2023
+    featured: true
+    issuer: Pennsylvania, multiple municipalities
+    issued: 2023-10
   - name: Limited Licensed Electrician
+    featured: true
     issuer: Tennessee
+    issued: 2026-08
+    expires: 2028-08
+  - name: Home Improvement Contractor
+    featured: true
+    issuer: Pennsylvania
+    issued: 2025-05
+    expires: 2027-05
 
 certifications:
-  - Tesla Certified Installer
-  - Generac Certified Installer
-  - Lutron Preferred Pro (RadioRA certified)
-  - OSHA 10
-  - NFPA 70E
+  # name required; group (subhead, shown in first-seen order), issuer, issued, expires optional
+  - name: 211 - Pennsylvania (Philadelphia) Standard Master Electrician Exam
+    group: Electrical & Controls
+    issuer: International Code Council
+    issued: 2023-10
+  - name: Tesla Certified Installer
+    group: Electrical & Controls
+    issuer: Tesla
+  - name: Lutron Preferred Pro
+    featured: true
+    group: Electrical & Controls
+    issuer: Lutron Electronics
+  - name: LP 831 - RadioRA 3 Qualification Training
+    group: Electrical & Controls
+    issuer: Lutron Electronics
+    issued: 2025-05
+  - name: Air-Cooled HSB Installation Training
+    group: Electrical & Controls
+    issuer: Generac
+    issued: 2024-01
+    expires: 2026-01
+  - name: 'NFPA 70E: Standard for Electrical Safety in the Workplace Training (2021)'
+    featured: true
+    group: Safety
+    issuer: 360training
+    issued: 2023-09
+  - name: OSHA 10 Hour Outreach Training Program - Construction
+    featured: true
+    group: Safety
+    issuer: 360training
+    issued: 2023-10
+  - name: Fire Fighter I
+    group: Emergency Services
+    issuer: Bucks County Community College
+    issued: 2018-08
+  - name: Hazardous Materials Operations (NFPA 472, 2013 Edition)
+    group: Emergency Services
+    issuer: Pennsylvania Office of the State Fire Commissioner
+    issued: 2017-11
+  - name: Hazardous Materials Awareness (NFPA 472, 2013 Edition)
+    group: Emergency Services
+    issuer: Pennsylvania Office of the State Fire Commissioner
+    issued: 2017-10
+  - name: NIMS 100b, 200b, 700a & 800b
+    group: Emergency Services
+    issuer: FEMA
+    issued: 2017-10
+  - name: TRUST Certificate
+    group: Other
+    issuer: Federal Aviation Administration
+    issued: 2023-04
 
 skills:
   - group: Controls & Automation
