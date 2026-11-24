@@ -20,21 +20,6 @@ const portraitModules = import.meta.glob<{ default: ImageMetadata }>(
 );
 const portrait = Object.values(portraitModules)[0]?.default;
 
-const areas = [
-  {
-    title: 'Controls & Automation',
-    body: 'A B.S. in Robotics Engineering focused on industrial controls, hands-on maintenance of production equipment, and a growing focus on PLCs and automation.',
-  },
-  {
-    title: 'Electrical',
-    body: 'Licensed master electrician. Lighting control, EV charging, standby generators, and service upgrades for residential and light commercial customers.',
-  },
-  {
-    title: 'Software & Self-Hosting',
-    body: 'Linux servers, networking, home automation, and websites, all built and maintained myself.',
-  },
-];
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -93,47 +78,39 @@ const jsonLd = {
       <SectionHeading index="01" id="about" title="About" />
       <div class="prose about">
         <p>
-          Hi! I'm a robotics engineer and licensed master electrician. I received my B.S. in Robotics
-          Engineering from Widener University in 2023, where I led a <a href="/projects/drone-autocharging/">senior capstone</a> building a self-landing,
+          Hi! I'm a robotics engineer and licensed master electrician. I received my B.S. in
+          Robotics Engineering from Widener University in 2023, where I led a{' '}
+          <a href="/projects/drone-autocharging/">senior capstone</a> building a self-landing,
           self-charging drone that won Best Oral Presentation.
         </p>
         <p>
-          In 2020, while still in school, I started <a href="/projects/matlack-electric/">Matlack Electric</a>, a licensed electrical contracting
-          business in Pennsylvania, and I've run it full-time since graduating. I've since moved the
-          business, and myself, to Tennessee. I've learned a lot about running a small business and the ins
-          and outs of all things electrical, from troubleshooting systems with no documentation to taking a
-          job from estimate through inspection. That's made me a better engineer and problem-solver.
+          In 2020, while still in school, I started{' '}
+          <a href="/projects/matlack-electric/">Matlack Electric</a>, a licensed electrical
+          contracting business in Pennsylvania, and I've run it full-time since graduating. I've
+          since moved the business, and myself, to Tennessee. I've learned a lot about running a
+          small business and the ins and outs of all things electrical, from troubleshooting systems
+          with no documentation to taking a job from estimate through inspection. That's made me a
+          better engineer and problem-solver.
         </p>
         <p>
           While I enjoy the hands-on nature of electrical contracting, I'm eager to get back into
           engineering and controls work, which is where my passion lies. I'm currently looking for a
           full-time role (on-site or hybrid) in controls engineering, automation, or robotics in the
-          Chattanooga area. If you have an opportunity you think I might be a good fit for, please reach
-          out!
+          Chattanooga area. If you have an opportunity you think I might be a good fit for, please
+          reach out!
         </p>
         <p>
-          Outside of work I enjoy tinkering with electronics, maintaining my <a href="/projects/homelab/">home server</a>, building websites, and working on open-source
-          projects. I also enjoy mountain biking, rock climbing, and most things outdoors.
+          Outside of work I enjoy tinkering with electronics, maintaining my{' '}
+          <a href="/projects/homelab/">home server</a>, building websites, and working on
+          open-source projects. I also enjoy mountain biking, rock climbing, and most things
+          outdoors.
         </p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="work-on">
-      <SectionHeading index="02" id="work-on" title="What I work on" />
-      <ul class="areas" role="list">
-        {areas.map((a, i) => (
-          <li>
-            <p class="label">{String(i + 1).padStart(2, '0')}</p>
-            <h3>{a.title}</h3>
-            <p>{a.body}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-
     {featured.length > 0 && (
       <section class="section" aria-labelledby="featured">
-        <SectionHeading index="03" id="featured" title="Featured work">
+        <SectionHeading index="02" id="featured" title="Featured work">
           <a class="label more" href="/projects/">
             All projects →
           </a>
@@ -143,7 +120,7 @@ const jsonLd = {
     )}
 
     <section class="section" aria-labelledby="credentials">
-      <SectionHeading index="04" id="credentials" title="Credentials">
+      <SectionHeading index="03" id="credentials" title="Credentials">
         <a class="label more" href="/resume/#r-licenses">
           Full list on resume →
         </a>
@@ -152,7 +129,7 @@ const jsonLd = {
     </section>
 
     <section class="section contact" aria-labelledby="contact">
-      <SectionHeading index="05" id="contact" title="Contact" />
+      <SectionHeading index="04" id="contact" title="Contact" />
       <p class="contact-line">The best way to reach me is email.</p>
       <div class="contact-links">
         <ContactLinks />
@@ -218,25 +195,6 @@ const jsonLd = {
   }
   .about {
     font-size: var(--step-0);
-  }
-
-  .areas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-    gap: var(--space-m);
-  }
-  .areas li {
-    padding-top: var(--space-s);
-    border-top: 2px solid var(--text);
-  }
-  .areas h3 {
-    font-size: var(--step-1);
-    margin-block: var(--space-2xs);
-  }
-  .areas p:last-child {
-    color: var(--muted);
-    font-size: var(--step--1);
-    line-height: 1.6;
   }
 
   .more {
