@@ -1,0 +1,78 @@
+# Single source of truth for the resume.
+# Feeds /resume/, the home-page credentials strip, and the generated PDF.
+# After editing, run `npm run resume:pdf` and commit the regenerated PDF.
+# Never add phone, street address, date of birth, or other personal identifiers.
+
+basics:
+  # name is pulled from src/data/site.ts when omitted
+  headline: Robotics engineer & master electrician
+  summary: >-
+    TODO (Ethan): Robotics engineer with a focus on industrial controls and six years running a
+    licensed electrical contracting business. Comfortable from the panel to the PLC: wiring,
+    troubleshooting, and the logic that makes equipment run. Looking for controls engineer or
+    controls technician work in the Chattanooga area.
+
+highlights:
+  - B.S. Robotics Engineering (industrial controls)
+  - PA Master Electrician; TN Limited Licensed Electrician
+  - 6+ years running a licensed electrical contracting business
+
+experience:
+  - org: Matlack Electric
+    role: Owner & Master Electrician
+    location: PA → TN
+    start: 2020-01 # TODO (Ethan): exact month
+    end: null # null = Present
+    bullets:
+      - 'TODO (Ethan): Founded and run a licensed, insured electrical contracting business: estimating, permitting, scheduling, and field work.'
+      - 'TODO (Ethan): Install and program Lutron RadioRA lighting control, EV chargers (Tesla certified), and Generac standby generators.'
+      - 'TODO (Ethan): Relocated the business from Pennsylvania to Tennessee and re-licensed in the new state.'
+  - org: 'TODO (Ethan): printing facility'
+    role: Maintenance
+    start: TODO
+    end: TODO
+    bullets:
+      - 'TODO (Ethan): Maintained and troubleshot industrial printing and finishing equipment on a production floor.'
+      - 'TODO (Ethan): Diagnosed electrical, mechanical, and control faults to keep lines running.'
+  - org: Self-employed
+    role: Handyman / general repair
+    start: 2018-01
+    end: 2020-01
+    bullets:
+      - 'TODO (Ethan): Residential repair and light renovation work for private clients.'
+      - 'TODO (Ethan): Built the customer base that became Matlack Electric.'
+
+education:
+  - school: Widener University
+    degree: B.S. Robotics Engineering
+    focus: Industrial controls
+    year: TODO (Ethan)
+
+licenses:
+  - name: Master Electrician
+    issuer: Multiple Pennsylvania municipalities
+    year: 2023
+  - name: Limited Licensed Electrician
+    issuer: Tennessee
+
+certifications:
+  - Tesla Certified Installer
+  - Generac Certified Installer
+  - Lutron Preferred Pro (RadioRA certified)
+  - OSHA 10
+  - NFPA 70E
+
+skills:
+  - group: Controls & Automation
+    items: ['TODO (Ethan): PLC platforms, HMI, etc.']
+  - group: Electrical
+    items:
+      - Residential & light commercial
+      - Service upgrades
+      - Generators
+      - EV charging
+      - Lighting control
+  - group: Software & Tools
+    items: [MATLAB, Linux, Networking, Docker, Home Assistant, Git]
+  - group: Fabrication
+    items: [Arc welding]

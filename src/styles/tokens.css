@@ -1,0 +1,72 @@
+/*
+ * Design tokens. Light values on :root; dark values swapped by the system
+ * color scheme. Both palettes are checked for WCAG AA on --bg and --surface.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Palette — light */
+  --bg: #fafaf9;
+  --surface: #f2f2ef;
+  --text: #18181b;
+  --muted: #595960; /* 6.6:1 on --bg */
+  --rule: #e0e0db;
+  --rule-strong: #c9c9c3;
+  --accent: #b93d07; /* signal orange, 5.6:1 on --bg */
+  --accent-hover: #8f2f05;
+  --lamp: #f26a1b; /* decorative indicator, not used for text */
+  --lamp-glow: rgb(242 106 27 / 0.28);
+  --focus: #b93d07;
+  --selection: rgb(242 106 27 / 0.22);
+
+  /* Type */
+  --font-body: var(--font-sans), system-ui, sans-serif;
+  --font-code: var(--font-mono), ui-monospace, monospace;
+
+  --step--2: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --step--1: clamp(0.84rem, 0.82rem + 0.12vw, 0.9rem);
+  --step-0: clamp(1.0625rem, 1.03rem + 0.16vw, 1.125rem); /* 17 → 18px */
+  --step-1: clamp(1.22rem, 1.15rem + 0.35vw, 1.4rem);
+  --step-2: clamp(1.45rem, 1.3rem + 0.75vw, 1.85rem);
+  --step-3: clamp(1.8rem, 1.5rem + 1.5vw, 2.6rem);
+  --step-hero: clamp(2.9rem, 1.6rem + 6.4vw, 6rem);
+
+  --leading: 1.6;
+  --leading-tight: 1.12;
+
+  /* Space */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.25rem;
+  --space-xl: clamp(3rem, 2.4rem + 3vw, 4.5rem);
+  --space-2xl: clamp(4rem, 3rem + 5vw, 7rem);
+
+  /* Layout */
+  --measure: 68ch;
+  --wide: 70rem;
+  --gutter: clamp(1.25rem, 0.8rem + 2.2vw, 2.5rem);
+  --radius: 4px;
+
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --dur: 160ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f11;
+    --surface: #17171a;
+    --text: #ececec;
+    --muted: #a3a3ab; /* 7.8:1 on --bg */
+    --rule: #26262b;
+    --rule-strong: #3a3a41;
+    --accent: #ff8f45; /* 8.4:1 on --bg */
+    --accent-hover: #ffb07a;
+    --lamp: #ff7a1f;
+    --lamp-glow: rgb(255 122 31 / 0.35);
+    --focus: #ff8f45;
+    --selection: rgb(255 122 31 / 0.3);
+  }
+}

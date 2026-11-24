@@ -1,0 +1,142 @@
+---
+import { Image } from 'astro:assets';
+import type { Project } from '../lib/projects';
+
+interface Props {
+  project: Project;
+  headingLevel?: 'h2' | 'h3';
+}
+const { project, headingLevel = 'h3' } = Astro.props;
+const { title, summary, status, tags, cover, coverAlt, kind } = project.data;
+const Heading = headingLevel;
+---
+
+<article class="card">
+  {cover && (
+    <Image
+      src={cover}
+      alt={coverAlt ?? ''}
+      widths={[400, 720]}
+      sizes="(min-width: 60rem) 22rem, 100vw"
+      class="cover"
+      loading="lazy"
+    />
+  )}
+  <div class="body">
+    <p class="label kind">
+      {kind === 'business' ? 'Business' : 'Project'}
+      {status !== 'active' && (
+        <span class="status" data-status={status}>
+          {status}
+        </span>
+      )}
+    </p>
+    <Heading class="title">
+      <a href={`/projects/${project.id}/`}>{title}</a>
+    </Heading>
+    <p class="summary">{summary}</p>
+    {tags.length > 0 && (
+      <ul class="chips" role="list" aria-label="Tags">
+        {tags.slice(0, 4).map((t) => (
+          <li>{t}</li>
+        ))}
+      </ul>
+    )}
+  </div>
+  <span class="arrow" aria-hidden="true">
+    →
+  </span>
+</article>
+
+<style>
+  /* Whole card is one link: the title link's ::after covers the card. */
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--bg);
+    transition:
+      border-color var(--dur) var(--ease),
+      background-color var(--dur) var(--ease);
+  }
+  .card:hover {
+    border-color: var(--rule-strong);
+    background: var(--surface);
+  }
+  .card:focus-within {
+    border-color: var(--accent);
+  }
+  .cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--rule);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-m);
+    padding-right: calc(var(--space-m) + 1.5rem);
+    flex: 1;
+  }
+  .kind {
+    display: flex;
+    gap: var(--space-2xs);
+    align-items: center;
+  }
+  .status {
+    padding: 0.1em 0.55em;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    color: var(--text);
+  }
+  .title {
+    font-size: var(--step-1);
+  }
+  .title a {
+    text-decoration: none;
+  }
+  .title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+  .title a:focus-visible {
+    outline: none;
+  }
+  .title a:focus-visible::after {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+  .card:hover .title a {
+    color: var(--accent);
+  }
+  .summary {
+    color: var(--muted);
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+  .chips {
+    margin-top: auto;
+    padding-top: var(--space-2xs);
+  }
+  .arrow {
+    position: absolute;
+    right: var(--space-m);
+    bottom: var(--space-m);
+    color: var(--muted);
+    transition:
+      transform var(--dur) var(--ease),
+      color var(--dur) var(--ease);
+  }
+  .card:hover .arrow {
+    transform: translateX(3px);
+    color: var(--accent);
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  /** Show full email address as the link text (default) or just labels. */
+  variant?: 'full' | 'compact';
+}
+const { variant = 'full' } = Astro.props;
+
+const links = [
+  { label: 'Email', href: `mailto:${site.email}`, text: site.email },
+  { label: 'LinkedIn', href: site.socials.linkedin, text: 'LinkedIn' },
+  { label: 'GitHub', href: site.socials.github, text: 'GitHub' },
+];
+---
+
+<ul class:list={['contact', variant]} role="list">
+  {links.map((l) => (
+    <li>
+      {variant === 'full' && <span class="label">{l.label}</span>}
+      <a href={l.href} rel={l.href.startsWith('http') ? 'me noopener' : undefined}>
+        {variant === 'full' ? l.text : l.label}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-m);
+  }
+  .full {
+    flex-direction: column;
+  }
+  .full li {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    align-items: baseline;
+    padding-block: var(--space-xs);
+    border-top: 1px solid var(--rule);
+  }
+  .full li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .full a {
+    font-size: var(--step-1);
+    letter-spacing: -0.01em;
+    overflow-wrap: anywhere;
+  }
+  .compact a {
+    font-size: var(--step--1);
+  }
+</style>

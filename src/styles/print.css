@@ -1,0 +1,116 @@
+/*
+ * Print stylesheet, loaded with media="print".
+ * Produces the US Letter, single-column, black-on-white resume (and the PDF).
+ * Scoped component styles carry an extra attribute selector, so overrides here
+ * use !important where they need to win.
+ */
+@page {
+  size: Letter;
+  margin: 0.55in 0.6in;
+}
+
+html:root {
+  color-scheme: light;
+  --bg: #fff;
+  --surface: #fff;
+  --text: #000;
+  --muted: #333;
+  --rule: #c8c8c8;
+  --rule-strong: #999;
+  --accent: #000;
+  --lamp: #000;
+  --lamp-glow: transparent;
+
+  --step--2: 7.5pt;
+  --step--1: 9pt;
+  --step-0: 10pt;
+  --step-1: 12pt;
+  --step-2: 14pt;
+  --step-3: 22pt;
+  --leading: 1.38;
+  --gutter: 0;
+  --space-m: 9pt;
+  --space-l: 12pt;
+  --space-xl: 0;
+}
+
+html,
+body {
+  background: #fff !important;
+  color: #000 !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.skip-link,
+.site-header,
+.site-footer,
+.no-print,
+.screen-only {
+  display: none !important;
+}
+.print-only {
+  display: initial !important;
+}
+
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* ---------- Resume ---------- */
+.resume {
+  max-width: none !important;
+  padding: 0 !important;
+}
+.resume .top {
+  padding-block: 0 8pt !important;
+  align-items: flex-start !important;
+}
+.resume .contact {
+  margin-top: 4pt !important;
+  gap: 0 10pt !important;
+}
+.resume .block {
+  grid-template-columns: 1.15in 1fr !important;
+  gap: 10pt !important;
+  padding-block: 7pt !important;
+  break-inside: avoid-page;
+}
+.resume .block > h2 {
+  padding-top: 1pt !important;
+  color: #000 !important;
+  font-weight: 600;
+}
+.resume .entry {
+  break-inside: avoid;
+}
+.resume .entry + .entry {
+  margin-top: 7pt !important;
+}
+.resume .bullets {
+  margin-top: 2pt !important;
+}
+.resume .bullets li + li {
+  margin-top: 1pt !important;
+}
+.resume .highlights {
+  margin-top: 5pt !important;
+  gap: 1pt !important;
+}
+.resume .skills > div {
+  grid-template-columns: 1.6in 1fr !important;
+  gap: 8pt !important;
+}
+.resume .skills > div + div {
+  margin-top: 2pt !important;
+}
+.resume .label {
+  color: #000 !important;
+}
+.resume .when {
+  color: #333 !important;
+}
+.resume h1 {
+  letter-spacing: -0.02em;
+}

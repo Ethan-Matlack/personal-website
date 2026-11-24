@@ -1,0 +1,170 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DateRange from '../../components/DateRange.astro';
+import { getProjects, type Project } from '../../lib/projects';
+
+export const getStaticPaths = (async () => {
+  const projects = await getProjects();
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+const { title, summary, kind, role, status, tags, started, ended, links, cover, coverAlt } =
+  project.data;
+const { Content } = await render(project);
+
+const hostname = (u: string) => new URL(u).hostname.replace(/^www\./, '');
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="wrap">
+    <a class="back label" href="/projects/">
+      ← All projects
+    </a>
+
+    <header class="head">
+      <p class="label">{kind === 'business' ? 'Business' : 'Project'}</p>
+      <h1>{title}</h1>
+      <p class="summary prose-width">{summary}</p>
+
+      <dl class="spec">
+        {role && (
+          <div>
+            <dt class="label">Role</dt>
+            <dd>{role}</dd>
+          </div>
+        )}
+        {started && (
+          <div>
+            <dt class="label">Dates</dt>
+            <dd>
+              <DateRange start={started} end={ended} />
+            </dd>
+          </div>
+        )}
+        <div>
+          <dt class="label">Status</dt>
+          <dd class="status">
+            {status === 'active' && <span class="lamp" aria-hidden="true" />}
+            <span>{status[0].toUpperCase() + status.slice(1)}</span>
+          </dd>
+        </div>
+        {(links.site || links.repo) && (
+          <div>
+            <dt class="label">Links</dt>
+            <dd class="links">
+              {links.site && (
+                <a href={links.site} target="_blank" rel="noopener">
+                  {hostname(links.site)} <span aria-hidden="true">↗</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              )}
+              {links.repo && (
+                <a href={links.repo} target="_blank" rel="noopener">
+                  Source <span aria-hidden="true">↗</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              )}
+            </dd>
+          </div>
+        )}
+      </dl>
+
+      {tags.length > 0 && (
+        <ul class="chips" role="list" aria-label="Tags">
+          {tags.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    {cover && (
+      <Image
+        src={cover}
+        alt={coverAlt ?? ''}
+        widths={[720, 1200, 1600]}
+        sizes="(min-width: 75rem) 70rem, 100vw"
+        class="cover"
+      />
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    <p class="foot">
+      <a class="back label" href="/projects/">
+        ← All projects
+      </a>
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .back {
+    display: inline-block;
+    margin-top: var(--space-l);
+    text-decoration: none;
+  }
+  .back:hover {
+    color: var(--accent);
+  }
+  .head {
+    padding-block: var(--space-l) var(--space-m);
+  }
+  h1 {
+    font-size: var(--step-3);
+    margin-block: var(--space-2xs) var(--space-s);
+  }
+  .summary {
+    color: var(--muted);
+    font-size: var(--step-1);
+    line-height: 1.5;
+  }
+  .spec {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: 0 var(--space-m);
+    margin-block: var(--space-l) var(--space-m);
+    max-width: var(--measure);
+    border-top: 1px solid var(--rule);
+  }
+  .spec > div {
+    padding-block: var(--space-xs);
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec dd {
+    margin-top: 0.15rem;
+    font-size: var(--step--1);
+  }
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-s);
+  }
+  .cover {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-l);
+  }
+  .prose :global(h2:first-child) {
+    margin-top: var(--space-m);
+  }
+  .foot {
+    margin-top: var(--space-xl);
+  }
+</style>

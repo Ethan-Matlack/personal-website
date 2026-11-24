@@ -1,0 +1,32 @@
+---
+/**
+ * "Jan 2020 – Present" with <time datetime>. Accepts Date objects
+ * (projects) or "YYYY-MM" / placeholder strings (resume).
+ */
+import { formatMonth, datetimeAttr } from '../lib/resume';
+import { formatDate, isoMonth } from '../lib/projects';
+
+type Value = Date | string | null | undefined;
+interface Props {
+  start: Value;
+  end: Value;
+  class?: string;
+}
+const { start, end, class: className } = Astro.props;
+
+const norm = (v: Exclude<Value, null | undefined>) =>
+  v instanceof Date
+    ? { text: formatDate(v), dt: isoMonth(v) }
+    : { text: formatMonth(v), dt: datetimeAttr(v) };
+
+const s = start ? norm(start) : undefined;
+const e = end ? norm(end) : undefined;
+---
+
+{s && (
+  <span class={className}>
+    <time datetime={s.dt}>{s.text}</time>
+    {' – '}
+    {e ? <time datetime={e.dt}>{e.text}</time> : 'Present'}
+  </span>
+)}

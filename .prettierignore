@@ -1,0 +1,7 @@
+dist/
+.astro/
+node_modules/
+public/ethan-matlack-resume.pdf
+public/ethan-matlack-resume.pdf.sha256
+package-lock.json
+ethanmatlack-com-spec.md

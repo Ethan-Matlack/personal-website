@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ethanmatlack-com",
+  "compatibility_date": "2026-11-23",
+  // Static assets only: no `main`, no Worker script.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+}

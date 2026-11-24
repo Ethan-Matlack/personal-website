@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found"
+  description="The page you were looking for doesn't exist."
+  noindex
+>
+  <div class="wrap nf">
+    <p class="label code">
+      <span class="lamp" aria-hidden="true"></span> Error 404
+    </p>
+    <h1>That page isn't here.</h1>
+    <p class="prose-width">
+      The link may be old, or the address may have a typo. Try one of these instead:
+    </p>
+    <p class="actions">
+      <a class="text-button" data-primary href="/">
+        Home{' '}
+        <span class="arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+      <a class="text-button" href="/projects/">
+        Projects{' '}
+        <span class="arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .nf {
+    padding-block: var(--space-2xl) var(--space-xl);
+  }
+  .code {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  h1 {
+    font-size: var(--step-3);
+    margin-block: var(--space-s);
+  }
+  p {
+    color: var(--muted);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-l);
+  }
+</style>
