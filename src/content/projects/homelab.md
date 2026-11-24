@@ -7,10 +7,6 @@ featured: true
 order: 2
 ---
 
-## Overview
-
-I run a home server platform that handles the household's media, books, and backups. It's a long-running project where I practice the same habits controls work rewards: document the system, automate the routine parts, and design for failure. TODO (Ethan): refine.
-
 ## What it does
 
 - **Media server with request automation.** Family members ask for something, and it shows up without anyone doing anything by hand.
@@ -22,7 +18,7 @@ I run a home server platform that handles the household's media, books, and back
 ## Side projects
 
 - **Red DiscordBot cog for media requests.** A plugin that lets people request media from a Discord server. TODO (Ethan): add a repo link when it's public.
-- **Media library audit tool (planned).** An open-source tool that checks a media library for storage use, codecs, HDR metadata, and naming consistency. TODO (Ethan): add a repo link when it exists.
+- **[media-audit](/projects/media-audit/).** An open-source tool that scans a media library and reports storage use, codecs, HDR, and file problems.
 
 ## Stack / Tools
 

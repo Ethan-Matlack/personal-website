@@ -59,7 +59,8 @@ featured: false # true = shown on the home page
 order: 10 # lower = earlier
 draft: false # true = excluded from production builds
 ---
-Markdown body. Suggested headings: Overview, What I did, Stack / Tools, Outcome / Status.
+Markdown body. Suggested headings: What I did, Stack / Tools, Outcome / Status. The `summary` already
+serves as the intro, so skip an Overview section.
 ```
 
 ### Portrait
