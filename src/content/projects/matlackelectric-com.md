@@ -1,12 +1,20 @@
 ---
-title: matlackelectric.com
 kind: project
+title: matlackelectric.com
 summary: The website for Matlack Electric, built with Astro and deployed to Cloudflare Workers from GitHub. It's a simple static site.
-tags: [Astro, CF Workers]
+# role:
+# started:
+# ended:
+status: active
 links:
   site: https://matlackelectric.com
   repo: https://github.com/Ethan-Matlack/matlackelectric-website
-order: 4
+tags: [Astro, CF Workers]
+# cover:
+# coverAlt:
+featured: false
+order: 6
+draft: false
 ---
 
 ## What I did

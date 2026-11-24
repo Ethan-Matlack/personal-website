@@ -1,14 +1,20 @@
 ---
-title: lifeatthenest.com
 kind: project
+title: lifeatthenest.com
 summary: Migrated and re-built a family blog and recipe site from WordPress to EmDash CMS running on Cloudflare Workers, R2, and D1.
+# role:
+# started:
+# ended:
 status: active
-tags: [Astro, EmDash, CF Workers, R2, D1]
 links:
   site: https://lifeatthenest.com
   repo: https://github.com/Ethan-Matlack/lifeatthenest-website
-featured: true
-order: 5
+tags: [Astro, EmDash, CF Workers, R2, D1]
+# cover:
+# coverAlt:
+featured: false
+order: 7
+draft: false
 ---
 
 ## What I did

@@ -1,14 +1,20 @@
 ---
-title: Matlack Electric
 kind: business
+title: Matlack Electric
 summary: A licensed, insured electrical contracting business focused on custom lighting, Lutron smart-home control, EV charging, and standby generators.
 role: Owner & Master Electrician
-tags: [Lighting control, Lutron RadioRA, EV charging, Generators, Service upgrades]
 started: 2020-03
+# ended:
+status: active
 links:
   site: https://matlackelectric.com
+  # repo:
+tags: [Lighting control, Lutron RadioRA, EV charging, Generators, Service upgrades]
+# cover:
+# coverAlt:
 featured: true
 order: 1
+draft: false
 ---
 
 ## What I do

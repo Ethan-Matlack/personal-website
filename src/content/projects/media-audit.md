@@ -1,13 +1,20 @@
 ---
-title: media-audit
 kind: project
+title: media-audit
 summary: A self-hosted, read-only tool that scans a media library and reports what's in it, including storage use, codecs, HDR, and file problems, through its own web UI. Open source, in Python.
+# role:
+started: 2026-11
+# ended:
 status: active
-tags: [Python, Docker, Unraid, SQLite]
-started: 2026-11-01
 links:
+  # site:
   repo: https://github.com/Ethan-Matlack/media-audit
-order: 3
+tags: [Python, Docker, Unraid, SQLite]
+# cover:
+# coverAlt:
+featured: false
+order: 5
+draft: false
 ---
 
 ## What it does

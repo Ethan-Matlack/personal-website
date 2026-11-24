@@ -1,10 +1,20 @@
 ---
-title: Homelab & Self-Hosting
 kind: project
+title: Homelab & Self-Hosting
 summary: A self-hosted home server platform for media, books, and backups, plus the open-source side projects that grew out of running it.
+# role:
+# started:
+# ended:
+status: active
+# links:
+#   site:
+#   repo:
 tags: [Unraid, Docker, Linux, Cloudflare, UniFi, Python]
+# cover:
+# coverAlt:
 featured: true
-order: 2
+order: 4
+draft: false
 ---
 
 ## What it does

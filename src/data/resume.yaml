@@ -7,10 +7,11 @@ basics:
   # name is pulled from src/data/site.ts when omitted
   headline: Robotics engineer & master electrician
   summary: >-
-    TODO (Ethan): Robotics engineer with a focus on industrial controls and six years running a
-    licensed electrical contracting business. Comfortable from the panel to the PLC: wiring,
-    troubleshooting, and the logic that makes equipment run. Looking for controls engineer or
-    controls technician work in the Chattanooga area.
+    Robotics engineer and licensed master electrician with 6 years of hands-on electrical work running an
+    independent contracting business. Strong troubleshooter across electrical, mechanical, and software
+    systems, with project experience in motion control, machine vision, and embedded programming. Seeking
+    a controls or automation engineering role where hands-on field skills and an engineering background both
+    add value.
 
 highlights:
   - B.S. Robotics Engineering from Widener University
@@ -70,7 +71,7 @@ certifications:
   - name: Tesla Certified Installer
     group: Electrical & Controls
     issuer: Tesla
-  - name: Lutron Preferred Pro
+  - name: Preferred Pro
     featured: true
     group: Electrical & Controls
     issuer: Lutron Electronics
@@ -83,12 +84,12 @@ certifications:
     issuer: Generac
     issued: 2024-01
     expires: 2026-01
-  - name: 'NFPA 70E: Standard for Electrical Safety in the Workplace Training (2021)'
+  - name: NFPA 70E (2021)
     featured: true
     group: Safety
     issuer: 360training
     issued: 2023-09
-  - name: OSHA 10 Hour Outreach Training Program - Construction
+  - name: OSHA 10 Hour
     featured: true
     group: Safety
     issuer: 360training
@@ -97,11 +98,11 @@ certifications:
     group: Emergency Services
     issuer: Bucks County Community College
     issued: 2018-08
-  - name: Hazardous Materials Operations (NFPA 472, 2013 Edition)
+  - name: Hazardous Materials Operations
     group: Emergency Services
     issuer: Pennsylvania Office of the State Fire Commissioner
     issued: 2017-11
-  - name: Hazardous Materials Awareness (NFPA 472, 2013 Edition)
+  - name: Hazardous Materials Awareness
     group: Emergency Services
     issuer: Pennsylvania Office of the State Fire Commissioner
     issued: 2017-10
