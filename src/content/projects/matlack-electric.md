@@ -11,8 +11,8 @@ links:
   # repo:
   # paper:
 tags: [Custom lighting, Lutron controls, EV charging, Backup power, Low-voltage & networking]
-# cover:
-# coverCaption:
+cover: ../../assets/projects/matlackelectric-cover.jpg
+coverCaption: A local newspaper article from 2021 when I was helping to restore power in my local community after Hurricane Ida
 featured: true
 order: 1
 draft: false
