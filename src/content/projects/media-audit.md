@@ -11,8 +11,8 @@ links:
   repo: https://github.com/Ethan-Matlack/media-audit
   # paper:
 tags: [Python, Docker, Unraid, SQLite, GitHub Actions]
-# cover:
-# coverCaption:
+cover: ../../assets/projects/media-audit-cover.png
+coverCaption: Demo rendering showing media-audit's features
 featured: false
 order: 5
 draft: false
