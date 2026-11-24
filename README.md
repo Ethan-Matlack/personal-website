@@ -91,48 +91,7 @@ by hand.
 `wrangler.jsonc` is assets-only (`./dist`, `not_found_handling: "404-page"`). Headers come from
 `public/_headers`.
 
-One-time dashboard setup:
-
-1. Push this repo to GitHub (suggested name: `ethanmatlack.com`).
-2. Cloudflare dashboard → **Workers & Pages → Create → Import a repository** → select the repo.
-3. Build command: `npm run build`. Deploy command: `npx wrangler deploy`. Production branch:
-   `main`. Enable **non-production branch preview builds**.
-4. Worker → **Settings → Domains & Routes → Add → Custom Domain: `ethanmatlack.com`** (apex
-   only).
-5. Add the `www` redirect rule (below).
-
-After that, every push to `main` deploys.
-
-### DNS cutover checklist
-
-Do this before step 4 above.
-
-- [ ] In **DNS → Records** for `ethanmatlack.com`, check the **apex** (`@` / `ethanmatlack.com`)
-      for existing A / AAAA / CNAME records (parking records). **If any exist, stop and decide
-      deliberately.** Don't delete anything blindly. Attaching a Custom Domain needs the apex
-      to be free of conflicting records.
-- [ ] Note the existing subdomain records. Attaching the apex Custom Domain must **not** change
-      any of them.
-- [ ] Attach the Custom Domain (`ethanmatlack.com` only).
-- [ ] **Never** add a wildcard route like `*.ethanmatlack.com/*`.
-- [ ] After cutover, spot-check that at least one existing subdomain still resolves and serves
-      as before (keep the name in your own notes, not in this repo).
-- [ ] Visit `https://ethanmatlack.com/` and an unknown path (should be the custom 404 with
-      status 404), and confirm the PDF downloads.
-
-### `www` → apex redirect (manual)
-
-Handled by a Cloudflare **Redirect Rule**, not the Worker:
-
-- First, check **DNS** for an existing `www` record. **If `www` already points at one of your
-  apps, don't touch it.** Skip this section and decide separately.
-- Otherwise, add a proxied DNS record for `www` (e.g. `AAAA www 100::`, proxied) so the rule
-  has something to match.
-- **Rules → Redirect Rules → Create rule**
-  - When incoming requests match: **Wildcard pattern**, request URL
-    `https://www.ethanmatlack.com/*`
-  - Then: **Dynamic redirect** to `https://ethanmatlack.com/${1}`, status **301**, preserve
-    query string.
+Every push to `main` deploys. Not using a dev branch because the site is so simple.
 
 ## Quality checks
 
