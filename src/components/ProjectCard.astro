@@ -7,7 +7,7 @@ interface Props {
   headingLevel?: 'h2' | 'h3';
 }
 const { project, headingLevel = 'h3' } = Astro.props;
-const { title, summary, status, tags, cover, coverAlt, kind } = project.data;
+const { title, summary, status, tags, cover, coverCaption, kind } = project.data;
 const Heading = headingLevel;
 ---
 
@@ -15,7 +15,7 @@ const Heading = headingLevel;
   {cover && (
     <Image
       src={cover}
-      alt={coverAlt ?? ''}
+      alt={coverCaption ?? ''}
       widths={[400, 720]}
       sizes="(min-width: 60rem) 22rem, 100vw"
       class="cover"

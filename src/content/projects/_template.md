@@ -24,7 +24,7 @@ links: # remove the "#" on the ones you have; fine to leave both commented
   # paper: https://… # e.g. a report hosted by a university library
 tags: [Tag One, Tag Two, Tag Three, Tag Four] # first 4 show on cards; put the most relevant first
 # cover: ../../assets/projects/<slug>-cover.jpg # optional image, path relative to this file
-# coverAlt: What the image shows # required if cover is set
+# coverCaption: What the image shows # shown under the image and used as its alt text
 featured: false # true = also shown under "Featured work" on the home page
 order: 100 # position on the Projects page; lower = earlier (businesses always come first)
 draft: true # true = hidden from the live site; set to false to publish

@@ -12,7 +12,7 @@ links:
   # paper:
 tags: [Arduino, C++, Stepper Motors, CoreXY, CAD, 3D Printing]
 # cover:
-# coverAlt:
+# coverCaption:
 featured: false
 order: 3
 draft: false

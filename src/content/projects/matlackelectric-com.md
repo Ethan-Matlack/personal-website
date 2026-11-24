@@ -12,7 +12,7 @@ links:
   # paper:
 tags: [Astro, CF Workers, GitHub Actions, three.js]
 # cover:
-# coverAlt:
+# coverCaption:
 featured: false
 order: 6
 draft: false

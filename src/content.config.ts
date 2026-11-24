@@ -28,7 +28,7 @@ const projects = defineCollection({
         .transform((v) => v ?? {}),
       tags: z.array(z.string()).default([]), // chips; first 4 shown on cards
       cover: image().optional(),
-      coverAlt: z.string().optional(), // required in practice when `cover` is set
+      coverCaption: z.string().optional(), // shown under the cover and used as its alt text
       featured: z.boolean().default(false), // shown on home page
       order: z.number().default(100), // lower = earlier
       draft: z.boolean().default(false), // excluded from production build

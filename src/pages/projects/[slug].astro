@@ -15,7 +15,7 @@ interface Props {
   project: Project;
 }
 const { project } = Astro.props;
-const { title, summary, kind, role, status, tags, started, ended, links, cover, coverAlt } =
+const { title, summary, kind, role, status, tags, started, ended, links, cover, coverCaption } =
   project.data;
 const { Content } = await render(project);
 
@@ -93,13 +93,16 @@ const hostname = (u: string) => new URL(u).hostname.replace(/^www\./, '');
       </header>
 
       {cover && (
-        <Image
-          src={cover}
-          alt={coverAlt ?? ''}
-          widths={[720, 1200, 1600]}
-          sizes="(min-width: 56rem) 51rem, 100vw"
-          class="cover"
-        />
+        <figure class="cover-figure">
+          <Image
+            src={cover}
+            alt={coverCaption ?? ''}
+            widths={[720, 1200, 1600]}
+            sizes="(min-width: 56rem) 51rem, 100vw"
+            class="cover"
+          />
+          {coverCaption && <figcaption>{coverCaption}</figcaption>}
+        </figure>
       )}
 
       <div class="prose">
@@ -167,12 +170,21 @@ const hostname = (u: string) => new URL(u).hostname.replace(/^www\./, '');
     flex-wrap: wrap;
     gap: 0 var(--space-s);
   }
+  .cover-figure {
+    margin: 0 0 var(--space-l);
+  }
   .cover {
     width: 100%;
     height: auto;
     border: 1px solid var(--rule);
     border-radius: var(--radius);
-    margin-bottom: var(--space-l);
+  }
+  figcaption {
+    margin-top: var(--space-2xs);
+    text-align: center;
+    font-size: var(--step--1);
+    line-height: 1.45;
+    color: var(--muted);
   }
   .prose :global(h2:first-child) {
     margin-top: var(--space-m);

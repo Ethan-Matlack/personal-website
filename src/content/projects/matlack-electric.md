@@ -12,7 +12,7 @@ links:
   # paper:
 tags: [Custom lighting, Lutron controls, EV charging, Backup power, Low-voltage & networking]
 # cover:
-# coverAlt:
+# coverCaption:
 featured: true
 order: 1
 draft: false

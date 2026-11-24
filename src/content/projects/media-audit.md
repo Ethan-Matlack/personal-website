@@ -12,7 +12,7 @@ links:
   # paper:
 tags: [Python, Docker, Unraid, SQLite, GitHub Actions]
 # cover:
-# coverAlt:
+# coverCaption:
 featured: false
 order: 5
 draft: false

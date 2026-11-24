@@ -12,7 +12,7 @@ links:
   # paper:
 tags: [Astro, EmDash, CF Workers, D1, R2, TypeScript]
 # cover:
-# coverAlt:
+# coverCaption:
 featured: false
 order: 7
 draft: false

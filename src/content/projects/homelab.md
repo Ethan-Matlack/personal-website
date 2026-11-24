@@ -12,7 +12,7 @@ status: active
 #   paper:
 tags: [Unraid, Docker, Linux, Cloudflare, Plex, UniFi, Python]
 # cover:
-# coverAlt:
+# coverCaption:
 featured: true
 order: 4
 draft: false
