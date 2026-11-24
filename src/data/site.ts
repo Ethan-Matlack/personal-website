@@ -8,11 +8,11 @@ export const site = {
   name: 'Ethan Matlack',
   headline: 'Robotics engineer & master electrician',
   subhead: 'Industrial controls, electrical systems, and the software that ties them together.',
-  location: 'Chattanooga, TN', // TODO (Ethan): confirm city wording
-  email: 'TODO@ethanmatlack.com', // TODO (Ethan): real address
+  location: 'Chattanooga, TN',
+  email: 'ethan@matlackfamily.net',
   socials: {
-    linkedin: 'https://www.linkedin.com/in/TODO', // TODO (Ethan)
-    github: 'https://github.com/TODO', // TODO (Ethan)
+    linkedin: 'https://www.linkedin.com/in/ethan-matlack',
+    github: 'https://github.com/Ethan-Matlack',
   },
   url: 'https://ethanmatlack.com',
 } as const;
