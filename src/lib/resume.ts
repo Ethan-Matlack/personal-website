@@ -35,9 +35,9 @@ const resumeSchema = z.strictObject({
     z.strictObject({
       school: z.string(),
       degree: z.string(),
-      focus: z.string().optional(),
       start: monthValue,
       end: monthValue.nullable(), // null = Present (in progress)
+      bullets: z.array(z.string()).default([]),
     }),
   ),
   licenses: z.array(

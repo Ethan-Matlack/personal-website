@@ -101,8 +101,8 @@ const display = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/
       </h2>
       <div class="content">
         {education.map((e) => (
-          <div class="entry">
-            <div class="entry-head">
+          <article class="entry">
+            <header class="entry-head">
               <h3>
                 {e.degree}
                 <span class="org">, {e.school}</span>
@@ -110,9 +110,15 @@ const display = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/
               <p class="when label">
                 <DateRange start={e.start} end={e.end} />
               </p>
-            </div>
-            {e.focus && <p class="detail">Focus: {e.focus}</p>}
-          </div>
+            </header>
+            {e.bullets.length > 0 && (
+              <ul class="bullets">
+                {e.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            )}
+          </article>
         ))}
       </div>
     </section>
@@ -269,9 +275,6 @@ const display = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/
     margin-top: 0.3em;
   }
   .bullets li::marker {
-    color: var(--muted);
-  }
-  .detail {
     color: var(--muted);
   }
 

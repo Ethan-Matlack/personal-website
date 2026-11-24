@@ -31,20 +31,15 @@ experience:
       - 'Install and start up standby generators and automatic transfer switches (Generac certified) and EV charging equipment (Tesla certified).'
       - 'Design and program lighting control systems for custom homes (Lutron Preferred Pro with RadioRA certification).'
       - 'Manage projects end to end: estimating, material ordering, scheduling, code compliance, inspections, and customer communication.'
-  - org: Self-employed
-    role: Handyman
-    location: PA
-    start: 2018-01
-    end: 2020-02
-    bullets:
-      - 'Performed residential repair and light renovation work for private clients. Everything from electrical and plumbing to carpentry and painting.'
 
 education:
   - school: Widener University
     degree: B.S. Robotics Engineering
-    focus: Industrial controls
     start: 2018-08
     end: 2023-08
+    bullets:
+      - 'Relevant coursework: PLC programming (Allen-Bradley CCW), UR5e cobot programming, robot kinematics (PUMA 560 simulation), three-phase power systems, feedback control systems.'
+      - 'Co-founder and President, Widener Robotics Club. Received the School of Engineering Ambassador Award for organizing a large robotics tournament as a freshman.'
 
 licenses:
   - name: Master Electrician
@@ -116,7 +111,6 @@ certifications:
     issued: 2023-04
 
 skills:
-  # Items marked "# new" are suggestions; delete any that don't fit.
   - group: Controls & Automation
     items:
       - Motion control
