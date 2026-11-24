@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionHeading from '../../components/SectionHeading.astro';
 import ProjectGrid from '../../components/ProjectGrid.astro';
 import { getProjects } from '../../lib/projects';
 
+// Businesses first, then projects, each by `order` (see getProjects).
+// Each card still carries its Business / Project label.
 const projects = await getProjects();
-const businesses = projects.filter((p) => p.data.kind === 'business');
-const others = projects.filter((p) => p.data.kind === 'project');
 ---
 
 <BaseLayout
@@ -23,18 +22,9 @@ const others = projects.filter((p) => p.data.kind === 'project');
       </p>
     </header>
 
-    {businesses.length > 0 && (
-      <section aria-labelledby="businesses">
-        <SectionHeading index="01" id="businesses" title="Businesses" />
-        <ProjectGrid projects={businesses} />
-      </section>
-    )}
-    {others.length > 0 && (
-      <section aria-labelledby="projects">
-        <SectionHeading index="02" id="projects" title="Projects" />
-        <ProjectGrid projects={others} />
-      </section>
-    )}
+    <section aria-label="All projects" class="all">
+      <ProjectGrid projects={projects} headingLevel="h2" />
+    </section>
   </div>
 </BaseLayout>
 
@@ -51,7 +41,8 @@ const others = projects.filter((p) => p.data.kind === 'project');
     font-size: var(--step-1);
     line-height: 1.5;
   }
-  section + section {
-    margin-top: var(--space-xl);
+  .all {
+    padding-top: var(--space-l);
+    border-top: 1px solid var(--rule);
   }
 </style>
