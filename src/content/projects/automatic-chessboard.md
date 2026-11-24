@@ -12,7 +12,7 @@ links:
   # paper:
 tags: [Arduino, C++, Stepper Motors, CoreXY, CAD, 3D Printing]
 cover: ../../assets/projects/automatic-chessboard-cover.jpg
-coverCaption: Wiring the reed switching into multiplexers
+coverCaption: Wiring the reed switches into multiplexers from ribbon cables
 featured: false
 order: 3
 draft: false
