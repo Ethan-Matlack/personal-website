@@ -21,6 +21,7 @@ status: active # active | planned | completed | archived  (shown as a pill on ca
 links: # remove the "#" on the ones you have; fine to leave both commented
   # site: https://example.com
   # repo: https://github.com/Ethan-Matlack/repo-name
+  # paper: https://… # e.g. a report hosted by a university library
 tags: [Tag One, Tag Two, Tag Three, Tag Four] # first 4 show on cards; put the most relevant first
 # cover: ../../assets/projects/<slug>-cover.jpg # optional image, path relative to this file
 # coverAlt: What the image shows # required if cover is set
