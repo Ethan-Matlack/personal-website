@@ -11,7 +11,7 @@ links:
   repo: https://github.com/Ethan-Matlack/matlackelectric-website
   # paper:
 tags: [Astro, CF Workers, GitHub Actions, three.js]
-# cover:
+cover: ../../assets/projects/matlackelectric-com-cover.png
 # coverCaption:
 featured: false
 order: 6
