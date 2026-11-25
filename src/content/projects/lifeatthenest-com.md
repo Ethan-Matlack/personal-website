@@ -11,7 +11,7 @@ links:
   repo: https://github.com/Ethan-Matlack/lifeatthenest-website
   # paper:
 tags: [Astro, EmDash, CF Workers, D1, R2, TypeScript]
-# cover:
+cover: ../../assets/projects/lifeatthenest-com-cover.png
 # coverCaption:
 featured: false
 order: 7
