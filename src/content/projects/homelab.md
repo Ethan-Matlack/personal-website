@@ -11,7 +11,7 @@ status: active
 #   repo:
 #   paper:
 tags: [Unraid, Docker, Linux, Cloudflare, Plex, UniFi, Python]
-# cover:
+cover: ../../assets/projects/homelab-cover.avif
 # coverCaption:
 featured: true
 order: 4
